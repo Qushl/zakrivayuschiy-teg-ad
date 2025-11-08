@@ -1,1 +1,14 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: 'Inter-Variable', sans-serif;
+    --highlight-font: 'PressStart2P', sans-serif;
+    --font-weight: 400;
+    --font-weight-bold: 700;
+
+    --bk-color: #fff;
+    --btn-hover-text-color: #fff;
+    --acc-clr: #000;
+    --acc-clr-transp: rgba(0, 0, 0, .6);
+    --border: 2px solid var(--acc-clr);
+
+}

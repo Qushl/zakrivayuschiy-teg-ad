@@ -10,5 +10,8 @@
     --acc-clr: #000;
     --acc-clr-transp: rgba(0, 0, 0, .6);
     --border: 2px solid var(--acc-clr);
+    --color-animation: #FF0000;
 
+    
+    
 }

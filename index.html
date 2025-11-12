@@ -234,6 +234,7 @@
             <span class="button__text">like</span>
           </button>
         </div>
+      </div>
     </main>
     <button class="save_button button" type="button" onclick="window['save-dialog'].showModal()" aria-controls="save-dialog">
       <svg class="dialog-button-img" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -246,11 +247,11 @@
         <use href="./svg/floppy1.svg"></use>
       </svg>
       <p class="dialog_title">Вставьте дискету, чтобы продолжить</p>
-      <form method="dialog" class="form-dialog">
+      <div class="form-dialog">
         <button class="dialog_button button" type="button" onclick="window['save-dialog'].close()">
           <span class="button_text">ок</span>
         </button>
-      </form>
+      </div>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>

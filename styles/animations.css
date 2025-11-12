@@ -59,10 +59,6 @@
   transition: fill 0.3s 0.06s linear;
 }
 
-.like-icon.is-liked .contour {
-    animation: like-contur 0.3s 0.1s ease-in alternate;
-}
-
 .like-icon.is-liked .particles {
     animation: like-particles 0.3s 0.1s ease-in alternate;
 }

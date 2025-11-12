@@ -31,7 +31,7 @@
   padding: 0;
   background-color: var(--bk-color);
   border: var(--border);
-  box-shadow: none; 
+  box-shadow: none;
   align-items: center;
   justify-items: center;
   position: relative;
@@ -40,7 +40,7 @@
 
 .button:focus {
   outline: none;
-  
+
 }
 .header {
   display: flex;
@@ -102,31 +102,32 @@
   margin-left: -340px;
   border: 2px solid var(--acc-clr);
 }
-.card2{
+
+.card2 {
   filter: saturate(200%);
 }
 
-.card3{
+.card3 {
   filter: sepia(100%);
 }
 
-.card4{
+.card4 {
   
 }
 
-.card5{
+.card5 {
   
 }
 
-.card6{
+.card6 {
   
 }
 
-.card7{
+.card7 {
   
 }
 
-.card8{
+.card8 {
   
 }
 
@@ -147,7 +148,7 @@
   z-index: 1;
 }
 
-.card_text-block{
+.card_text-block {
   display: grid;
   padding: 25px;
   gap: 28px;
@@ -238,7 +239,7 @@
   overflow: hidden;
 }
 
-.form-dialog {
+.dialog-buttom {
   grid-column: 1 / 3;
 }
 
@@ -270,11 +271,11 @@
 }
 
 @media (width <= 1440px) {
-  .header{
+  .header {
     width: min(100%, 700px);
   }
 
-  .main{
+  .main {
     width: min(100%, 700px);
   }
 }

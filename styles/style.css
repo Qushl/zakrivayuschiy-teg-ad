@@ -31,7 +31,7 @@
   padding: 0;
   background-color: var(--bk-color);
   border: var(--border);
-  box-shadow: none; 
+  box-shadow: none;
   align-items: center;
   justify-items: center;
   position: relative;
@@ -112,23 +112,23 @@
 }
 
 .card4 {
-  
+  filter: invert(100%);
 }
 
 .card5 {
-  
+  filter: blur(5px);
 }
 
 .card6 {
-  
+  filter: sepia(100%) hue-rotate(180deg);
 }
 
 .card7 {
-  
+  filter: grayscale(100%);
 }
 
 .card8 {
-  
+  filter: hue-rotate(90deg);
 }
 
 @supports ((-webkit-text-stroke: 1px #FFFFFF) or (text-stroke: 1px #FFFFFF)) {
@@ -315,7 +315,7 @@
     width: min(100%, 700px);
   }
 
-  .main{
+  .main {
     width: min(100%, 700px);
   }
 }

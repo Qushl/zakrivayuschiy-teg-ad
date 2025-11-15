@@ -280,6 +280,10 @@
   overflow: hidden;
 }
 
+.dialog:not([open]) {
+  display: none;
+}
+
 .dialog-buttom {
   grid-column: 1 / 3;
 }

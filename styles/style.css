@@ -11,7 +11,7 @@
 */
 .page {
   min-inline-size: 320px;
-  min-block-size: 100dvb;
+  min-block-size: 100vh;
   font-family: var(--main-font);
   color: var(--acc-clr);
   background-image: var(--back-image);
@@ -20,13 +20,8 @@
   background-attachment: fixed;
 }
 
-.content {
-  margin: 0 auto;
-  max-inline-size: 700px;
-  min-block-size: 368px;
-}
-
 .button {
+  position: relative;
   display: grid;
   padding: 0;
   background-color: var(--bk-color);
@@ -34,14 +29,37 @@
   box-shadow: none;
   align-items: center;
   justify-items: center;
-  position: relative;
   cursor: pointer;
+  transition: color 0.5s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--acc-clr);
+  transform: translateX(-100%);
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button:hover {
+  color: var(--btn-hover-text-color);
 }
 
 .button:focus {
-  outline: none;
-
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
 }
+
 .header {
   display: flex;
   flex-direction: column;
@@ -50,6 +68,8 @@
   margin: 100px auto 0;
   background-color: var(--bk-color);
   border: 2px solid var(--acc-clr);
+  max-inline-size: 700px;
+  min-block-size: 368px;
 }
 
 .logo_group {
@@ -99,45 +119,56 @@
 .card_image {
   block-size: 700px;
   object-fit: cover;
-  margin-left: -340px;
   border: 2px solid var(--acc-clr);
+}
+
+.card1 {
+  margin-left: -2px;
 }
 
 .card2 {
   filter: saturate(200%);
+  margin-left: -100px;
 }
 
 .card3 {
   filter: sepia(100%);
+  margin-left: 25px;
 }
 
 .card4 {
-  filter: invert(100%);
+  filter: blur(5px);
+  transform: scale(2);
+  margin-left: 150px;
 }
 
 .card5 {
-  filter: blur(5px);
+  filter: sepia(100%) hue-rotate(180deg);
+  margin-left: -2px;
 }
 
 .card6 {
-  filter: sepia(100%) hue-rotate(180deg);
+  filter: invert(100%);
+  margin-left: -2px;
 }
 
 .card7 {
   filter: grayscale(100%);
+  margin-left: -150px;
 }
 
 .card8 {
-  filter: hue-rotate(90deg);
+  filter: hue-rotate(360deg);
+  margin-left: -180px;
 }
 
-@supports ((-webkit-text-stroke: 1px #FFFFFF) or (text-stroke: 1px #FFFFFF)) {
+@supports ((-webkit-text-stroke: 1px #FFFFFF)) {
   .label {
     -webkit-text-stroke: 1px #FFFFFF;
   }
 }
 
-@supports not ((-webkit-text-stroke: 1px #FFFFFF) or (text-stroke: 1px #FFFFFF)) {
+@supports not ((-webkit-text-stroke: 1px #FFFFFF)) {
   .label {
     text-shadow:
       1px 0 #FFFFFF,
@@ -178,41 +209,11 @@
 }
 
 .card__like-button {
-  position: relative;
-  background-color: var(--bk-color);
   border: 2px solid var(--acc-clr);
   padding: 9px 17px;
-  cursor: pointer;
   font-family: var(--highlight-font);
   block-size: 38px;
   inline-size: 130px;
-  overflow: hidden;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-.card__like-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--acc-clr);
-  transform: translateX(-100%);
-  z-index: -1;
-  transition: transform 0.3s ease;
-}
-
-.card__like-button:hover::before {
-  transform: translateX(0);
-}
-
-.card__like-button:hover {
-  color: var(--btn-hover-text-color);
-}
-.card__like-button:focus {
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .card__icon-button {
@@ -231,37 +232,8 @@
   font-family: var(--highlight-font);
   padding: 15px 20px;
   font-size: 14px;
-  background-color: var(--bk-color);
   gap: 8px;
   align-items: center;
-  transition: color 0.5s ease;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.save_button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--acc-clr);
-  transform: translateX(-100%);
-  z-index: -2;
-  transition: transform 0.5s ease;
-}
-
-.save_button:hover::before {
-  transform: translateX(0);
-}
-
-.save_button:hover {
-  color: var(--btn-hover-text-color);
-}
-
-.save_button:focus {
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
 }
 
 .dialog[open] {
@@ -345,9 +317,8 @@
   }
 
   dialog[open] {
-  inline-size: 341px;
-  block-size: 191px;
-  padding: 30px 40px;
+    inline-size: 341px;
+    block-size: 191px;
+    padding: 30px 40px;
   }
-  
 }
